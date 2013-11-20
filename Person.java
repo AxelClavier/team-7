@@ -2,8 +2,7 @@
  * One object of this class stores 1 single person information
  */
 public class Person {
-	private String firstName, lastName, emailAddress, phoneNumber, notes;
-	private StreetAddress myStreetAddress;
+	private String firstName, lastName, StreetAddress, emailAddress, phoneNumber, notes;
 	
 	public String getFirstName() {
 		return firstName;
@@ -20,6 +19,13 @@ public class Person {
 	public String getEmailAddress() {
 		return emailAddress;
 	}
+	public String getStreetAddress() {
+		return StreetAddress;
+	}
+	public void setStreetAddress(String StreetAddress) {
+		this.StreetAddress = StreetAddress;
+	}
+		
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
@@ -35,15 +41,8 @@ public class Person {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	public StreetAddress getMyStreetAddress() {
-		return myStreetAddress;
-	}
-	public void setMyStreetAddress(StreetAddress myStreetAddress) {
-		this.myStreetAddress = myStreetAddress;
-	}
-	
-	public void printPerson(){
-		//print all information for 1 contact 
+	public String printPerson(){
+		return firstName + lastName + StreetAddress + emailAddress + phoneNumber + notes; 
 	}	
 	
 }
