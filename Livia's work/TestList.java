@@ -1,8 +1,9 @@
 /**
- * this is the main
+ * This is the main
+ * LT
  */
 public class TestList {
-	public static void main (String args[]){
+	public static void main (String args[]) {
 		
 		//create a Scanner for start-up user interfaces:
 			//1.Enter a new person data		2.Print Contact List

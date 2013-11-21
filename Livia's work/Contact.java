@@ -57,5 +57,3 @@ public class Contact {
 	}
 
 }
-
-//This is a test edit
