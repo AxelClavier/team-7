@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Ancillary {
 	private int numberOfContacts = 0;
 	private String[] fullContacts = new String[100];
@@ -55,6 +56,9 @@ public class Ancillary {
 		fullContacts[numberOfContacts] = newContact.getPerson();
 		lastNames[numberOfContacts] = newContact.getLastName();
 		numberOfContacts++;
+		
+		
+		System.out.println(numberOfContacts);
 	}
 	
 	/**
@@ -85,23 +89,35 @@ public class Ancillary {
 		for (int i = 0; i < fullContacts.length && fullContacts[i] != null; i++) {
 		     System.out.println(fullContacts[i] + "\n");
 		}
-		System.out.print("press enter to contiue");
+		System.out.print("press enter to continue");
 		String pause = myScanner.nextLine();
 		
 	}
 	
 	/**
-	 * Searches the arraylist by last name and prints the relevant 
-	 * information to the console.
+	 * Searches the array by last name and prints the relevant information to
+	 * the console.
 	 */
-	public void search (){
+	public void searchLastName() {
 		Scanner myScanner = new Scanner(System.in);
 		System.out.println("------------------");
-		System.out.println("Feature not yet implemented.\n");
-		System.out.print("press enter to contiue");
-		String pause = myScanner.nextLine();
+		System.out.println(" What is the last name of the person you are looking for? ");
+		String search = myScanner.nextLine();
+		
+		/**
+		 * String comparison between user input and last name.
+		 */
+		
+		for (int i = 0; i < lastNames.length; i++)
+		{
+			if ((search).equals(lastNames[i])) 
+			{
+				System.out.println(fullContacts[i]);
+			}
+		}
+		System.out.println("press enter to continue");
 	}
-	
+
 	/**
 	 * Saves the existing contact list to a .txt file on the hard drive, 
 	 * then prints a confirmation and a farewell message.
@@ -114,5 +130,7 @@ public class Ancillary {
 	
 	
 }
+
+
 
 
