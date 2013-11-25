@@ -22,7 +22,7 @@ public class Main {
 			else if (userChoice == 2)
 				run.printList();
 			else if (userChoice == 3)
-				run.search();
+				run.searchLastName();
 			else if (userChoice == 4) {
 				run.exit();
 				runVariable = 1;
