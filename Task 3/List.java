@@ -12,17 +12,7 @@ public class List {
 	 * Screen that directs the user to different parts of the program
 	 */
 	public int mainMenu() {
-		System.out.println("------------------");
-		System.out.println("What do you want to do?");
-		System.out.println("  1. Add new person");
-		System.out.println("  2. Visualize contact list");
-		System.out.println("  3. Search a specific person on the contact list by last name");
-		System.out.println("  4. Exit");
-		System.out.println();
-		System.out.print("Input: ");
-		Scanner myScanner = new Scanner(System.in);
-		int userChoice = myScanner.nextInt();
-		
+		int userChoice = 0;
 		return userChoice;
 	}
 
@@ -75,24 +65,7 @@ public class List {
 
 		myList.add(newPerson);
 	}
-
-	/**
-	 * Retrieves and prints the existing contact list.
-	 */
-	/*
-	public void printList (){
-		System.out.println("------------------");
-		System.out.println("2. Visualize contact list\n");
-		Scanner myScanner = new Scanner(System.in);
-
-		for (int i = 0; i < fullContacts.length && fullContacts[i] != null; i++) {
-		     System.out.println(fullContacts[i] + "\n");
-		}
-		System.out.print("press enter to continue");
-		String pause = myScanner.nextLine();
-
-	}
-	 */
+	 
 	/**
 	 * String comparison between user input and last name.
 	 */
@@ -104,26 +77,16 @@ public class List {
 	 * display list of Persons (objects) stored in myList
 	 */
 	public void printList(){
+		System.out.println("------------------");
+		System.out.println("2. Print list\n");
 		for(Person person : myList){
-			person.toString(); 
+			System.out.println(person.toString() + "\n"); 
 		}
 	}
 	/**
 	 * print Person(s) (object) with certain last name
 	 */
-	/*
 	 public void retrieve(String lastName){
-		int found = 0;
-		for(Person person : myList){
-			if(person.getLastName().equals(lastName)){
-				found = 1;
-				person.printPerson();
-			}
-		}
-		if(found == 0){
-			System.out.println("Last Name "+lastName+" is not found");
-		}
-
+		 
 	}
-	*/
 }

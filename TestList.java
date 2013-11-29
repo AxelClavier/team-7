@@ -8,19 +8,12 @@ import java.util.Scanner;
 public class TestList {
 	public static void main(String args[]) {
 		int runVariable = 0;
+		Scanner myScanner = new Scanner(System.in);
 		
 		List myContactList = new List();
 		
-		while (runVariable == 0) 
-			System.out.println("------------------");
-			System.out.println("What do you want to do?");
-			System.out.println("  1. Add new person");
-			System.out.println("  2. Visualize contact list");
-			System.out.println("  3. Search a specific person on the contact list by last name");
-			System.out.println("  4. Exit");
-			System.out.print("\nInput: ");
-			Scanner myScanner = new Scanner(System.in);
-			int userChoice = myScanner.nextInt();
+		while (runVariable == 0) {
+			int userChoice = myContactList.mainMenu();
 
 			if (userChoice == 1)
 				myContactList.addPerson();
@@ -49,6 +42,7 @@ public class TestList {
 		}
 
 	}
+}
 	/*
 	 * System.out.println("MyContactList should be empty! " +
 	 * myContactList.toString()); myContactList.addPerson(person1);
