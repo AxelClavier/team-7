@@ -3,10 +3,14 @@ import java.util.ArrayList;
 import java.io.*;
 
 /**
- * One object of this class stores a list of information for many contacts
+ * One object of this class stores a list of persons
  */
 public class List {
 	private ArrayList <Person> myList = new ArrayList<Person>();
+	
+	public List (){
+		myList = new ArrayList <Person> ();		//an arraylist with Person data type is created
+	}
 	
 	/**
 	 * Screen that directs the user to different parts of the program
@@ -17,8 +21,7 @@ public class List {
 	}
 
 	/**
-	 * Prompts the user to enter a new contact's information
-	 * and then stores that information in an array.
+	 * add 1 Person into a single element of myList
 	 */
 	public void addPerson (){
 		Person newPerson = new Person();
@@ -87,6 +90,10 @@ public class List {
 	 * print Person(s) (object) with certain last name
 	 */
 	 public void retrieve(String lastName){
-		 
+		//If there is no one in the contact list with the given last name, the system will display a
+		//message to the user telling her that: "last name is not found"
+		// If there is more than one person in the contact list with the given last name, then all of
+		//the people with that last name will be displayed.
+		
 	}
 }
