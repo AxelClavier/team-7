@@ -6,7 +6,7 @@ import java.io.*;
  * One object of this class stores a list of persons
  */
 public class List {
-	private ArrayList <Person> myList = new ArrayList<Person>();
+	private ArrayList <Person> myList;
 	
 	public List (){
 		myList = new ArrayList <Person> ();		//an arraylist with Person data type is created
