@@ -7,11 +7,11 @@ import java.io.*;
  */
 public class List {
 	private ArrayList <Person> myList;
-	
+
 	public List (){
 		myList = new ArrayList <Person> ();		//an arraylist with Person data type is created
 	}
-	
+
 	/**
 	 * Screen that directs the user to different parts of the program
 	 */
@@ -68,32 +68,36 @@ public class List {
 
 		myList.add(newPerson);
 	}
-	 
-	/**
-	 * String comparison between user input and last name.
-	 */
-	public void searchLastName() {
 
-	}
-	 
 	/**
 	 * display list of Persons (objects) stored in myList
 	 */
 	public void printList(){
 		System.out.println("------------------");
-		System.out.println("2. Print list\n");
+		System.out.println("2. Print list");
 		for(Person person : myList){
 			System.out.println(person.toString() + "\n"); 
 		}
 	}
+	
 	/**
 	 * print Person(s) (object) with certain last name
 	 */
-	 public void retrieve(String lastName){
+	public void retrieve(String lastName){
 		//If there is no one in the contact list with the given last name, the system will display a
 		//message to the user telling her that: "last name is not found"
 		// If there is more than one person in the contact list with the given last name, then all of
 		//the people with that last name will be displayed.
-		
+		int found = 0;
+		for(Person person : myList){
+			if(person.getLastName().equals(lastName)){
+				found = 1;
+				person.toString();
+			}
+		}
+		if(found == 0){
+			System.out.println("Last Name "+lastName+" is not found");
+		}
 	}
+
 }
