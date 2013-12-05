@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Contact list program that allows the user to add people to the list,
  * visualize the contacts he/she already inputed, search through the contacts by
@@ -5,65 +8,100 @@
  */
 public class TestList {
 	public static void main(String args[]) {
+//		/**
+//		 * Screen that directs the user to different parts of the program
+//		 */
+//		public int mainMenu() {
+//			int userChoice = 0;
+//			return userChoice;
+//		}
+		
 		List myContactList = new List();
-		myContactList.addPerson();
-		myContactList.addPerson();
-		myContactList.addPerson();
-		myContactList.printList();
-		System.out.println("------------------");
+		myContactList.addPerson(); // add someone name
+		myContactList.addPerson(); 
+		myContactList.addPerson(); 
+		
+		System.out.println("Objects are not sorted by last name: " );
+		myContactList.printList(); // objects are not sorted by last name
+		
+		myContactList.sortByLastName();	//what am I doing with a returned value? nothing
+		
+		System.out.println("Objects are sorted by last name: " );
+		myContactList.printList();	// objects are sorted by last name
+	
 	}
 }
 
-/*--- output ---
-------------------
+/*----- output ------
+ * ------------------
 1. Add new person
   Name: Livia
-  Last name: Tjandra
-  Street address: 123 N
-  Email: asd@mail.com
-  Phone: 123-456-7899
-  Notes: test 1
+  Last name: Tja
+  Street address: 123
+  Email: 123
+  Phone: 123
+  Notes: 123
 
-Livia Tjandra added to contact list!
+Livia Tja added to contact list!
 ------------------
 1. Add new person
   Name: Axel
-  Last name: Clavier
-  Street address: 456 H
-  Email: hjl@mail.com
-  Phone: 987-654-3211
-  Notes: test 2
+  Last name: Cla
+  Street address: 123
+  Email: 123
+  Phone: 123
+  Notes: 123
 
-Axel Clavier added to contact list!
+Axel Cla added to contact list!
 ------------------
 1. Add new person
-  Name: Kennetg
-  Last name: Wong
-  Street address: qwe
-  Email: qwe@mail.com
-  Phone: 234-567-8912
-  Notes: test 3
+  Name: Dedd
+  Last name: Wahyu
+  Street address: 123
+  Email: 123
+  Phone: 123
+  Notes: 123
 
-Kennetg Wong added to contact list!
+Dedd Wahyu added to contact list!
+Objects are not sorted by last name: 
 ------------------
 2. Print list
-  Livia Tjandra
-    Street Address: 123 N
-    Email address: asd@mail.com
-    Phone number: 123-456-7899
-    Phone numbertest 1
+[  Livia Tja
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
 
-  Axel Clavier
-    Street Address: 456 H
-    Email address: hjl@mail.com
-    Phone number: 987-654-3211
-    Phone numbertest 2
+[  Axel Cla
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
 
-  Kennetg Wong
-    Street Address: qwe
-    Email address: qwe@mail.com
-    Phone number: 234-567-8912
-    Phone numbertest 3
+[  Dedd Wahyu
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
 
+Objects are sorted by last name: 
 ------------------
-*/
+2. Print list
+[  Axel Cla
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
+
+[  Livia Tja
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
+
+[  Dedd Wahyu
+    Street Address: 123
+    Email address: 123
+    Phone number: 123
+    Phone number123
+ */
