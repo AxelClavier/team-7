@@ -92,9 +92,9 @@ public class Person {
 	/**
 	 * Returns a String containing firstName, lastName, StreetAddress, emailAddress, phoneNumber, notes
 	 */
-	public String getPerson() {
+	public String toString() {
 		return "  " + firstName + " " + lastName + "\n    Street Address: " + StreetAddress + "\n    Email address: " + emailAddress
-				+ "\n    Phone number: " + phoneNumber + "\n    Phone number" + notes;
+				+ "\n    Phone number: " + phoneNumber + "\n    Notes: " + notes;
 	}
 
 }
