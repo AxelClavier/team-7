@@ -13,14 +13,6 @@ public class List {
 	}
 
 	/**
-	 * Screen that directs the user to different parts of the program
-	 */
-	public int mainMenu() {
-		int userChoice = 0;
-		return userChoice;
-	}
-
-	/**
 	 * add 1 Person into a single element of myList
 	 */
 	public void addPerson (){
@@ -78,6 +70,13 @@ public class List {
 		for(Person person : myList){
 			System.out.println(person.toString() + "\n"); 
 		}
+	}
+	
+	/*
+	 * sort the whole list object by the last name attributes of the objects
+	 */
+	public void sortByLastName(){
+		Collections.sort(myList);
 	}
 	
 	/**
