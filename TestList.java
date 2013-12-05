@@ -5,14 +5,14 @@ import java.util.Scanner;
  * visualize the contacts he/she already inputed, search through the contacts by
  * last name, and save his/her contact list to the hard drive.
  */
-public class TestList {
+public class testList {
 	public static void main(String args[]) {
-		int runVariable = 0;
+		Boolean run = true;
 		Scanner myScanner = new Scanner(System.in);
 		
 		List myContactList = new List();
 		
-		while (runVariable == 0) {
+		while (run == true) {
 			int userChoice = myContactList.mainMenu();
 
 			if (userChoice == 1)
@@ -34,26 +34,14 @@ public class TestList {
 				System.out.println("------------------");
 				System.out.println("Ta-ta for now!\nProgram terminated.");
 				System.out.println("------------------");
-				runVariable = 1;
+				run = false;
 			}
 
 			else
-				System.out.println("Invalid input.");
+				System.out.println("\nInvalid input, please try again.");
 		}
 
 	}
 }
-	/*
-	 * System.out.println("MyContactList should be empty! " +
-	 * myContactList.toString()); myContactList.addPerson(person1);
-	 * System.out.println("Person1 in myContactList! " +
-	 * myContactList.toString());
-	 * 
-	 * myContactList.printList(); //I DO NOT KNOW HOW TO TEST. SINCE I WANT TO
-	 * RETURN OBJECTS
-	 * 
-	 * myContactList.retrieve("unknown"); myContactList.retrieve("Tj");
-	 * //DISPLAY WRONG OUTPUT. IT SHOULD BE RETRIEVE!
-	 * }
-	 */
+
 

@@ -6,8 +6,8 @@ import java.io.*;
  * One object of this class stores a list of information for many contacts
  */
 public class List {
-	private ArrayList <Person> myList = new ArrayList<Person>();
-	
+	private ArrayList<Person> myList = new ArrayList<Person>();
+
 	/**
 	 * Screen that directs the user to different parts of the program
 	 */
@@ -16,21 +16,28 @@ public class List {
 		System.out.println("What do you want to do?");
 		System.out.println("  1. Add new person");
 		System.out.println("  2. Visualize contact list");
-		System.out.println("  3. Search a specific person on the contact list by last name");
+		System.out
+				.println("  3. Search a specific person on the contact list by last name");
 		System.out.println("  4. Exit");
 		System.out.println();
 		System.out.print("Input: ");
 		Scanner myScanner = new Scanner(System.in);
-		int userChoice = myScanner.nextInt();
-		
-		return userChoice;
+		String userChoice = myScanner.nextLine();
+		int returnValue;
+
+		if (isInt(userChoice) == false)
+			return 5;
+		else {
+			returnValue = Integer.parseInt(userChoice);
+			return returnValue;
+		}
 	}
 
 	/**
-	 * Prompts the user to enter a new contact's information
-	 * and then stores that information in an array.
+	 * Prompts the user to enter a new contact's information and then stores
+	 * that information in an array.
 	 */
-	public void addPerson (){
+	public void addPerson() {
 		Person newPerson = new Person();
 		Scanner myScanner = new Scanner(System.in);
 		int i = 0;
@@ -42,15 +49,15 @@ public class List {
 		String name = myScanner.nextLine();
 		newPerson.setFirstName(name);
 
-		int loop = 0;
-		while (loop == 0) {
+		Boolean tryAgain = false;
+		while (tryAgain == false) {
 			System.out.print("  Last name: ");
 			String surname = myScanner.nextLine();
 			if (surname.equals("")) {
 				System.out.println("    Please enter a last name.");
 			} else {
 				newPerson.setLastName(surname);
-				loop = 1;
+				tryAgain = true;
 			}
 		}
 
@@ -70,60 +77,55 @@ public class List {
 		String notes = myScanner.nextLine();
 		newPerson.setNotes(notes);
 
-		System.out.println("\n" + newPerson.getFirstName()
-				+ " " + newPerson.getLastName() + " added to contact list!");
+		System.out.println("\n" + newPerson.getFirstName() + " "
+				+ newPerson.getLastName() + " added to contact list!");
 
 		myList.add(newPerson);
 	}
 
-	/**
-	 * Retrieves and prints the existing contact list.
-	 */
-	/*
-	public void printList (){
-		System.out.println("------------------");
-		System.out.println("2. Visualize contact list\n");
-		Scanner myScanner = new Scanner(System.in);
-
-		for (int i = 0; i < fullContacts.length && fullContacts[i] != null; i++) {
-		     System.out.println(fullContacts[i] + "\n");
-		}
-		System.out.print("press enter to continue");
-		String pause = myScanner.nextLine();
-
-	}
-	 */
 	/**
 	 * String comparison between user input and last name.
 	 */
 	public void searchLastName() {
 
 	}
-	 
+
 	/**
 	 * display list of Persons (objects) stored in myList
 	 */
-	public void printList(){
-		for(Person person : myList){
-			person.toString(); 
-		}
-	}
 	/**
-	 * print Person(s) (object) with certain last name
+	 * display list of Persons (objects) stored in myList
 	 */
-	/*
-	 public void retrieve(String lastName){
-		int found = 0;
-		for(Person person : myList){
-			if(person.getLastName().equals(lastName)){
-				found = 1;
-				person.printPerson();
-			}
-		}
-		if(found == 0){
-			System.out.println("Last Name "+lastName+" is not found");
+	public void printList() {
+		Scanner myScanner = new Scanner(System.in);
+		System.out.println("------------------");
+		System.out.println("2. Visualize contact list\n");
+		for (Person person : myList) {
+			System.out.println(person.toString() + "\n");
 		}
 
+		System.out.print("\npress enter to continue");
+		String pause = myScanner.nextLine();
 	}
-	*/
+
+	public boolean isInt(String userChoice) {
+		try {
+			Integer.parseInt(userChoice);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
+	}
 }
+
+/**
+ * print Person(s) (object) with certain last name
+ */
+/*
+ * public void retrieve(String lastName){ int found = 0; for(Person person :
+ * myList){ if(person.getLastName().equals(lastName)){ found = 1;
+ * person.printPerson(); } } if(found == 0){
+ * System.out.println("Last Name "+lastName+" is not found"); }
+ * 
+ * }
+ */
