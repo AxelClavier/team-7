@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
@@ -20,7 +21,7 @@ public class List {
 				.println("  3. Search a specific person on the contact list by last name");
 		System.out.println("  4. Exit");
 		System.out.println();
-		System.out.print("Input: ");
+		System.out.print("Choose one: ");
 		Scanner myScanner = new Scanner(System.in);
 		String userChoice = myScanner.nextLine();
 		int returnValue;
@@ -34,7 +35,7 @@ public class List {
 	}
 
 	/**
-	 * Prompts the user to enter a new contact's information and then stores
+	 * Axel: Prompts the user to enter a new contact's information and then stores
 	 * that information in an array.
 	 */
 	public void addPerson() {
@@ -84,20 +85,29 @@ public class List {
 	}
 
 	/**
-	 * String comparison between user input and last name.
+	 * Comparison between user input and stored last name.
 	 */
-	public void searchLastName() {
-
+	public Person searchLastName() {
+		Scanner myScanner = new Scanner(System.in);
+		System.out.println("------------------");
+		System.out.println("2. Who do you want to search for?\n");
+		System.out.println("Enter last name:");
+		String lastName = myScanner.nextLine();
+		
+		for (Person newPerson : myList) {
+			if (Person.getLastName() == lastName) {
+				return newPerson;
+			}
+		}
+		return null;
 	}
 
 	/**
-	 * display list of Persons (objects) stored in myList
-	 */
-	/**
-	 * display list of Persons (objects) stored in myList
+	 * Axel: Displays list of Persons (objects) stored in myList
 	 */
 	public void printList() {
 		Scanner myScanner = new Scanner(System.in);
+		sortByLastName();
 		System.out.println("------------------");
 		System.out.println("2. Visualize contact list\n");
 		for (Person person : myList) {
@@ -108,6 +118,18 @@ public class List {
 		String pause = myScanner.nextLine();
 	}
 
+	/**
+	 * Livia: sort the whole list object by the last name attributes of the objects
+	 * 
+	 */
+	public void sortByLastName(){
+		Collections.sort(myList);
+	}
+
+	/**
+	 * Axel: Checks to see if user input is an int,
+	 * returns false if it is not.
+	 */
 	public boolean isInt(String userChoice) {
 		try {
 			Integer.parseInt(userChoice);
@@ -118,14 +140,3 @@ public class List {
 	}
 }
 
-/**
- * print Person(s) (object) with certain last name
- */
-/*
- * public void retrieve(String lastName){ int found = 0; for(Person person :
- * myList){ if(person.getLastName().equals(lastName)){ found = 1;
- * person.printPerson(); } } if(found == 0){
- * System.out.println("Last Name "+lastName+" is not found"); }
- * 
- * }
- */

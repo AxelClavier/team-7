@@ -21,13 +21,11 @@ public class testList {
 			else if (userChoice == 2) 
 				myContactList.printList();
 			
-
 			else if (userChoice == 3) {
 				System.out.println("------------------");
 				System.out
 						.println(" What is the last name of the person you are looking for? ");
 				String search = myScanner.nextLine();
-
 			}
 
 			else if (userChoice == 4) {
