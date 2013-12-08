@@ -10,15 +10,14 @@ public class List {
 	private ArrayList<Person> myList = new ArrayList<Person>();
 
 	/**
-	 * Screen that directs the user to different parts of the program
+	 * Axel: Screen that directs the user to different parts of the program
 	 */
 	public int mainMenu() {
 		System.out.println("------------------");
 		System.out.println("What do you want to do?");
 		System.out.println("  1. Add new person");
 		System.out.println("  2. Visualize contact list");
-		System.out
-				.println("  3. Search a specific person on the contact list by last name");
+		System.out.println("  3. Search a specific person on the contact list by last name");
 		System.out.println("  4. Exit");
 		System.out.println();
 		System.out.print("Choose one: ");
@@ -85,21 +84,18 @@ public class List {
 	}
 
 	/**
-	 * Comparison between user input and stored last name.
+	 * Axel: Searches myList for a last name provided by the user, 
+	 * then returns the person object to which said last name belongs.
 	 */
-	public Person searchLastName() {
-		Scanner myScanner = new Scanner(System.in);
-		System.out.println("------------------");
-		System.out.println("2. Who do you want to search for?\n");
-		System.out.println("Enter last name:");
-		String lastName = myScanner.nextLine();
-		
-		for (Person newPerson : myList) {
-			if (Person.getLastName() == lastName) {
-				return newPerson;
+	public boolean searchLastName(String lastName) {
+		for (Person person : myList) {
+			int compared = lastName.compareTo(person.getLastName());
+			if (compared == 0){
+				System.out.println("\n" + person.toString());
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	/**

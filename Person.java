@@ -3,7 +3,7 @@
  */
 public class Person implements Comparable <Person> {
 	private String firstName;
-	private static String lastName;
+	private String lastName;
 	private String StreetAddress;
 	private String emailAddress;
 	private String phoneNumber;
@@ -37,7 +37,7 @@ public class Person implements Comparable <Person> {
 	/**
 	 * Returns the value of lastName.
 	 */
-	public static String getLastName() {
+	public String getLastName() {
 		return lastName;
 	}
 
@@ -109,7 +109,7 @@ public class Person implements Comparable <Person> {
 	 */
 	public String toString() {
 		return "  " + firstName + " " + lastName + "\n    Street Address: " + StreetAddress + "\n    Email address: " + emailAddress
-				+ "\n    Phone number: " + phoneNumber + "\n    Phone number" + notes;
+				+ "\n    Phone number: " + phoneNumber + "\n    Notes: " + notes;
 	}
 
 }

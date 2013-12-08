@@ -5,7 +5,7 @@ import java.util.Scanner;
  * visualize the contacts he/she already inputed, search through the contacts by
  * last name, and save his/her contact list to the hard drive.
  */
-public class testList {
+public class TestList {
 	public static void main(String args[]) {
 		Boolean run = true;
 		Scanner myScanner = new Scanner(System.in);
@@ -23,9 +23,16 @@ public class testList {
 			
 			else if (userChoice == 3) {
 				System.out.println("------------------");
-				System.out
-						.println(" What is the last name of the person you are looking for? ");
+				System.out.println("3. Who do you want to search for?\n");
+				System.out.print("Enter last name: ");
 				String search = myScanner.nextLine();
+				boolean found = myContactList.searchLastName(search);
+				
+				if (found == false)
+					System.out.print("\n" + search + " not found.");
+				
+				System.out.print("\npress enter to continue");
+				String pause = myScanner.nextLine();
 			}
 
 			else if (userChoice == 4) {
