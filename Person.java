@@ -11,6 +11,7 @@ public class Person implements Comparable <Person> {
 
 	/**
 	 * L: Compare the value of lastName
+	 * and return int value of result
 	 */
 	public int compareTo(Person otherPerson){
 		int result = lastName.compareToIgnoreCase(otherPerson.lastName);
