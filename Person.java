@@ -11,14 +11,13 @@ public class Person implements Comparable <Person> {
 
 	/**
 	 * L: Compare the value of lastName
-	 * and return int value of result
 	 */
-	public int compareTo(Person otherPerson){
-		int result = lastName.compareToIgnoreCase(otherPerson.lastName);
-		if (result == 0){
-			return (firstName.compareTo(firstName));
+	public int compareTo(Person newPerson){
+		if(lastName.equals(newPerson.lastName))
+		    return firstName.compareTo(newPerson.firstName);
+		else
+		return lastName.compareTo(newPerson.lastName);
 		}
-		return result;
 	}
 	
 	/**
