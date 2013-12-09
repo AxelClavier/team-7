@@ -35,7 +35,7 @@ public class List {
 
 	/**
 	 * Axel: Prompts the user to enter a new contact's information and then stores
-	 * that information in an array.
+	 * that information in myList.
 	 */
 	public void addPerson() {
 		Person newPerson = new Person();
@@ -85,7 +85,8 @@ public class List {
 
 	/**
 	 * Axel: Searches myList for a last name provided by the user, 
-	 * then returns the person object to which said last name belongs.
+	 * then returns boolean and then call the toString method to print the person object information
+	 * to which said last name belongs.
 	 */
 	public boolean searchLastName(String lastName) {
 		for (Person person : myList) {
@@ -105,7 +106,7 @@ public class List {
 		Scanner myScanner = new Scanner(System.in);
 		sortByLastName();
 		System.out.println("------------------");
-		System.out.println("2. Visualize contact list\n");
+		System.out.println("2. Visualize contact list (sorted by last name) \n");
 		for (Person person : myList) {
 			System.out.println(person.toString() + "\n");
 		}
@@ -124,7 +125,7 @@ public class List {
 
 	/**
 	 * Axel: Checks to see if user input is an int,
-	 * returns false if it is not.
+	 * returns boolean (false) if it is not.
 	 */
 	public boolean isInt(String userChoice) {
 		try {
