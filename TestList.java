@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Contact list program that allows the user to add people to the list,
  * visualize the contacts he/she already inputed, search through the contacts by
- * last name, and save his/her contact list to the hard drive.
+ * last name.
  */
 public class TestList {
 	public static void main(String args[]) {
