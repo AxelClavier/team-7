@@ -18,7 +18,7 @@ public class Person implements Comparable <Person> {
 		else
 		return lastName.compareTo(newPerson.lastName);
 		}
-	}
+	
 	
 	/**
 	 * L: Returns the value of firstName.

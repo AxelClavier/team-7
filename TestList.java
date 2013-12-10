@@ -5,7 +5,7 @@ import java.util.Scanner;
  * visualize the contacts he/she already inputed, search through the contacts by
  * last name.
  */
-public class TestList {
+public class testList {
 	public static void main(String args[]) {
 		Boolean run = true;
 		Scanner myScanner = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class TestList {
 				if (found == false)
 					System.out.print("\n" + search + " not found.");
 				
-				System.out.print("\npress enter to continue");
+				System.out.println("\npress enter to continue");
 				String pause = myScanner.nextLine();
 			}
 

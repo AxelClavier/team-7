@@ -89,14 +89,18 @@ public class List {
 	 * to which said last name belongs.
 	 */
 	public boolean searchLastName(String lastName) {
+		int compared = 3;
 		for (Person person : myList) {
-			int compared = lastName.compareTo(person.getLastName());
+			compared = lastName.compareTo(person.getLastName());
 			if (compared == 0){
 				System.out.println("\n" + person.toString());
-				return true;
 			}
 		}
-		return false;
+		
+		if (compared == 0)
+			return true;
+		else
+			return false;
 	}
 
 	/**
