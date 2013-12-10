@@ -156,7 +156,7 @@ Choose one: 2
     Notes: contact 3
 
   Tjandra Livia
-    Street Address: 234-567-8900
+    Street Address: 234 Castro, Mountain View, CA
     Email address: tjandra@mail.com
     Phone number: 234-567-8990
     Notes: contact 2 (try to skip last name)
@@ -182,6 +182,21 @@ What do you want to do?
   3. Search a specific person on the contact list by last name
   4. Exit
 
+Choose one: 3
+------------------
+3. Who do you want to search for?
+
+Enter last name: Wong
+
+Wong not found.
+press enter to continue
+------------------
+What do you want to do?
+  1. Add new person
+  2. Visualize contact list
+  3. Search a specific person on the contact list by last name
+  4. Exit
+  
 Choose one: 3
 ------------------
 3. Who do you want to search for?
